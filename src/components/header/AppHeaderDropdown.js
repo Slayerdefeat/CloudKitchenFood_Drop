@@ -24,18 +24,30 @@ import CIcon from '@coreui/icons-react'
 
 import avatar8 from './../../assets/images/avatars/8.jpg'
 import StorageHelper from 'src/Httphelper'
+import { Link } from 'react-router-dom'
 
 const AppHeaderDropdown = () => {
   return (
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0" caret={false}>
-        <CAvatar src={StorageHelper.getData()?.profile_img} size="md" />
+        <CAvatar src={StorageHelper?.getData()?.profile_img} size="md" />
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
         <CDropdownHeader className="bg-light fw-semibold py-2">Account</CDropdownHeader>
         <CDropdownItem href="#">
-          <CIcon icon={cilBell} className="me-2" />
-          Logout
+          {
+            !!StorageHelper?.getToken()?<button  onClick={()=>{
+              localStorage.clear()
+              setTimeout(()=>{window.location.assign("/login")},700)
+              return 
+            }}>Logout</button>:<>
+            <Link to={"/login"}>Login</Link>
+            <Link to={"/register"}>Register</Link>
+            
+            </>
+          }
+          {/* <CIcon icon={cilBell} className="me-2" />
+          Logout */}
         </CDropdownItem>
       </CDropdownMenu>
     </CDropdown>

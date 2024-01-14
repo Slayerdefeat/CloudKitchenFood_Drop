@@ -1,6 +1,8 @@
 import axios from "axios";
 import getAuthHeader from "src/Utils/SendHeader";
-const API_URL = "https://food-drop-backend.onrender.com/api";
+// const API_URL = "https://food-drop-backend.onrender.com/api";
+const API_URL='http://127.0.0.1:4000/api'
+
 
 const categoryservices = {};
 
