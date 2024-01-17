@@ -125,11 +125,13 @@ const OrderList = () => {
                           </CTableDataCell>
                           <CTableDataCell>
                             <CRow>
-                              <CCol>{each?.food_id?.map((each)=>each?.name)}</CCol>
+                              <CCol>
+                                {each?.foods?.map((ele) => (
+                                  <tr>{ele?.food_id.name}({ele?.qty}) -   &#8377; {parseInt(ele?.food_id?.price)*parseInt(ele?.qty)}</tr>
+                                ))}
+                              </CCol>
                             </CRow>
-                            <CRow>
-                              <CCol>&#8377; {each?.food_id?.map((each)=>each?.price)}</CCol>
-                            </CRow>
+                          
                           </CTableDataCell>
                           <CTableDataCell>
                             <CRow>
@@ -137,7 +139,8 @@ const OrderList = () => {
                                 <button
                                   className="btn btn-outline-danger"
                                   disabled={
-                                    each?.order_status == "out-for-delivery" || each?.order_status=='delivered'
+                                    each?.order_status == "out-for-delivery" ||
+                                    each?.order_status == "delivered"
                                       ? true
                                       : false
                                   }

@@ -64,8 +64,8 @@ const PaymentList = () => {
               <CTableDataCell>{each?.payment_id?.transection_id}</CTableDataCell>
               <CTableDataCell>&#8377; {each?.payment_id?.amount}</CTableDataCell>
               <CTableDataCell>{each?.user_id?.name}</CTableDataCell>
-              <CTableDataCell>{new Date(each?.payment_id?.updatedAt).toUTCString()}</CTableDataCell>
-              <CTableDataCell>{each?.food_id?.map((each)=>each?.name)}</CTableDataCell>
+              <CTableDataCell>{new Date(each?.payment_id?.updatedAt || null).toUTCString()}</CTableDataCell>
+              <CTableDataCell>{each?.foods?.map((each)=><tr>{each?.food_id?.name}</tr>)}</CTableDataCell>
 
             </CTableRow>
             })

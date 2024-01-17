@@ -9,6 +9,7 @@ import store from "./store";
 import { CutomeProvider } from "./Utils/CustomContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import 'react-toastify/dist/ReactToastify.css';
+import './assets/Style.css'
 
 // Create a client
 const queryClient = new QueryClient();
