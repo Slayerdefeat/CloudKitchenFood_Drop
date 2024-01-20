@@ -23,7 +23,7 @@ const PaymentList = () => {
     () => orderservices.order_by_rest_id({ rest_id }),
     {
       onSuccess: (data) => {
-        console.log("Data of payment List")
+        console.log("Data of payment List",data)
       },
       onError: (err) => {
         toast?.error(err?.response?.data?.message, { delay: 10 });
@@ -58,7 +58,7 @@ const PaymentList = () => {
         </CTableHead>
         <CTableBody>
           {
-            data?.data?.length==0?<p className='text-danger'>No Payment Found</p>:data?.data?.data?.map((each,ind)=>{
+            data?.data?.data?.length==0?<p className='text-danger'>No Payment Found</p>:data?.data?.data?.map((each,ind)=>{
               return  <CTableRow key={each?._id}>
               <CTableHeaderCell scope="row">{ind+1}</CTableHeaderCell>
               <CTableDataCell>{each?.payment_id?.transection_id}</CTableDataCell>
