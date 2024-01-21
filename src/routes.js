@@ -11,6 +11,7 @@ import Register from './views/pages/register/Register'
 import Login from './views/pages/login/Login'
 import PaymentDetails from './page/PaymentDetails'
 import OrderDetails from './page/OrderDetails'
+import ContactList from './page/Contact'
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const routes = [
@@ -25,6 +26,7 @@ const routes = [
   { path: '/food/add', name: 'Add', element: FoodAdd },
   { path: '/category/add', name: 'Add', element: AddCategory },
   { path: '/payment', name: 'Payment', element: PaymentList },
+  { path: '/contact', name: 'Contact', element: ContactList },
   { path: '/payment/details/:id', name: 'Details', element: PaymentDetails },
 ]
 

@@ -61,6 +61,15 @@ const _nav = [
       color: 'info',
     },
   },
+  {
+    component: CNavItem,
+    name: 'Contact',
+    to: '/contact',
+    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+    badge: {
+      color: 'info',
+    },
+  },
 ]
 
 export default _nav
