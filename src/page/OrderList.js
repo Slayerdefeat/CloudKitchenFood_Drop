@@ -127,7 +127,7 @@ const OrderList = () => {
                             <CRow>
                               <CCol>
                                 {each?.foods?.map((ele) => (
-                                  <tr>{ele?.food_id.name}({ele?.qty}) -   &#8377; {parseInt(ele?.food_id?.price)*parseInt(ele?.qty)}</tr>
+                                  <tr>{ele?.food_id?.name}({ele?.qty}) -   &#8377; {parseInt(ele?.food_id?.price)*parseInt(ele?.qty)}</tr>
                                 ))}
                               </CCol>
                             </CRow>
